@@ -4,7 +4,6 @@
   "description": "Protect GraphQL resolvers with rbac",
   "author": "Rokket Labs",
   "license": "MIT",
-  "url": "https://github.com/nestjs/typeorm#readme",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json",
     "prepublish:npm": "npm run build",
@@ -13,6 +12,8 @@
     "publish:next": "npm publish --access public --tag next",
     "test:integration": "jest --config ./tests/jest-e2e.json --runInBand"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "@nestjs/common": "6.11.5",
     "@nestjs/core": "6.11.5",
@@ -24,19 +25,11 @@
     "@types/node": "7.10.8",
     "@types/supertest": "2.0.8",
     "@types/uuid": "3.4.7",
-    "husky": "4.2.1",
-    "jest": "25.1.0",
-    "lint-staged": "10.0.7",
-    "mysql": "2.18.1",
-    "pg": "7.18.1",
     "reflect-metadata": "0.1.13",
-    "rxjs": "6.5.4",
-    "rxjs-compat": "6.5.4",
     "supertest": "4.0.2",
     "ts-jest": "25.1.0",
     "ts-node": "^8.4.1",
     "tsconfig-paths": "^3.9.0",
-    "typeorm": "0.2.22",
     "typescript": "3.7.5",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
@@ -54,23 +47,14 @@
   "peerDependencies": {
     "@nestjs/common": "^6.7.0",
     "@nestjs/core": "^6.7.0",
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.0.0",
-    "typeorm": "^0.2.7"
+    "@nestjs/graphql": "^6.5.3",
+    "@nestjs/passport": "^6.1.1",
+    "reflect-metadata": "^0.1.12"
   },
   "lint-staged": {
     "*.ts": [
       "prettier --write",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nestjs/typeorm"
   }
 }
