@@ -35,7 +35,7 @@ const rolesPermissions = {
 export const roles = new RolesBuilder(rolesPermissions)
 ```
 
-then add the roles to the app module
+then add those roles to the app module
 
 ```typescript
 import { Module } from '@nestjs/common'
@@ -56,7 +56,7 @@ import { roles } from './app.roles'
 export class AppModule {}
 ```
 
-now you can the RoleProtected decorator to protect your resolver methods! 🔥
+now, you can use the `RoleProtected` decorator to protect your resolver methods! 🔥
 
 ```typescript
 /* ... imports ... */
